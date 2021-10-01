@@ -1,0 +1,16 @@
+name = "cloudflare-cron-generate-site"
+type = "javascript"
+workers_dev = true
+compatibility_date = "2021-10-01"
+
+[build]
+command = "npm install && npm run build"
+[build.upload]
+format = "service-worker"
+
+#[secrets]
+#SCHEDULED_WEBHOOK
+
+# UTC
+[triggers]
+crons = ["0 0 * * *"]
